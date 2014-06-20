@@ -1,0 +1,37 @@
+<%= include ../layouts/header.ejs %>
+
+
+<div>
+  <script>
+    var a = document.getElementById('#atom<%- payload %>');
+  </script>
+        <section class="post">
+            <header class="post-header">
+
+                <h2 class="post-title"><%= title %> </h2><br/><br/>
+                This is a very basic challenge on Cross Site Scrpting (XSS). Consider this, a welcome drink from me !  <br/><br/>
+                You should be able to inject stuff in to this webpage via the <code>Search</code> box below. <br/>
+                It is also a <code>GET</code> parameter with the name <code>payload</code>. <br/><br/><br/><br/>
+                <h2> Objective: </h2> <h3>Just popup an <code>alert</code> box with some text. Eg) alert(1);</h3>
+
+            </header>
+
+            <div class="post-description">
+                <p>
+                  <form class="pure-form" method="GET" action="/challenges/xss1">
+                      <fieldset>
+                          <legend>Some people Search me. Some XSS me. Who are you?</legend>
+
+                          <input type="text" name="payload" placeholder="Search . . ">
+                          <button type="submit" class="pure-button pure-button-primary">Go !</button>
+                      </fieldset>
+                  </form>
+
+                </p>
+            </div>
+            <%= include scores.ejs %>
+        </section>
+    </div>
+
+
+<%= include ../layouts/footer.ejs %>

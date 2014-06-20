@@ -1,0 +1,16 @@
+<br/>
+<br/>
+<div class="post-description">
+    <p>
+      Solvers so far: (Name - Payload Length):
+      <% scores.forEach(function(score){ %>
+        <li><%= score.name %> - <%= score.value %></li>
+      <% }); %>
+
+      <% if(scores.length === 0){%>
+        <br/>
+        No one solved this so far !
+      <%} %>
+    </p>
+
+</div>
